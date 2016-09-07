@@ -1,0 +1,43 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $model app\models\Comment */
+
+$this->title = 'Create Post Comment';
+$this->params['breadcrumbs'][] = ['label' => 'Comments', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="comment-create">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <div class="comment-form">
+
+    <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+
+    <!-- <?= $form->field($model, 'status')->textInput() ?> -->
+
+    <!-- <?= $form->field($model, 'create_time')->textInput() ?> -->
+
+    <?= $form->field($model, 'author')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
+
+    <!-- <?= $form->field($model, 'post_id')->textInput() ?> -->
+
+    <div class="form-group">
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Updatepostcomment', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+</div>
+
+</div>
